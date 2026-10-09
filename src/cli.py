@@ -23,7 +23,7 @@ def main():
         print(f"Error: Path '{target_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
 
-    print(f"🔍 Scanning target: {target_path.resolve()}\n")
+    print(f"Scanning target: {target_path.resolve()}\n")
 
     scanner = SecretScanner(target_path)
     findings = scanner.scan_directory()
