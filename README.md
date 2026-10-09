@@ -15,7 +15,8 @@ The project targets developers and security-conscious teams who want a fast, eas
 - Masks detected secrets in output to avoid leaking them in logs
 - Supports use as a Git pre-commit check
 - Can be used in CI/CD workflows with JSON output
-- Covered by pytest-based tests
+- Includes pytest-based validation tests
+- Ignores the `tests` directory during scans to avoid flagging the test fixtures themselves in a final push
 
 ## Project Structure
 
@@ -33,6 +34,10 @@ git-leak-detector/
 ```
 
 ## Quick Start
+
+### Testing
+
+This project uses `pytest` for validation. Test fixtures are intentionally kept in the `tests` folder and excluded from the scanner's default directory walk to avoid false positives during a final repository push.
 
 ### Install
 
