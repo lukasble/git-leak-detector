@@ -13,7 +13,7 @@ def main():
         type=str,
         nargs="?",
         default=".",
-        help="Path to file or directory to scan (default: current directory)",
+        help="Path to scan (default: current directory)",
     )
 
     args = parser.parse_args()
@@ -23,7 +23,7 @@ def main():
         print(f"Error: Path '{target_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Scanning target: {target_path.resolve()}\n")
+    print(f"🔍 Scanning target: {target_path.resolve()}\n")
 
     scanner = SecretScanner(target_path)
     findings = scanner.scan_directory()
@@ -37,10 +37,9 @@ def main():
         print(
             f"  [!] Type: {finding['type']}\n"
             f"      File: {finding['file']}:{finding['line']}\n"
-            f"      Match: {finding['match']}\n"
+            f"      Match: {finding['masked_match']}\n"
         )
 
-    # Exit with non-zero code if secrets are found (ideal for CI/CD pipelines)
     sys.exit(1)
 
 
