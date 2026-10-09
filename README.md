@@ -2,7 +2,7 @@
 
 Git Leak Detector is a lightweight Python CLI designed to prevent accidental secret exposure before code reaches version control. It is intended for local development, pre-commit validation, and CI/CD pipelines where catching leaked credentials early is important.
 
-The project targets developers and security-conscious teams who want a fast, easy-to-run check for hardcoded secrets in files and repositories. The goal is to provide a simple shift-left security control that reduces the risk of AWS keys, GitHub tokens, private keys, and other sensitive values being committed by mistake.
+The project targets developers and security-conscious teams who want a fast, easy-to-run check for hardcoded secrets in files and repositories. The goal is to provide a simple shift-left security control that reduces the risk of AWS keys, GitHub tokens, private keys, and other sensitive values being committed by mistake. I have previously worked in teams with other developers and wanted to try to develop a lightweight scanner before making the updates official. 
 
 ## Features
 
